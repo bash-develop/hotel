@@ -26,7 +26,7 @@ function Header() {
 				} z-30 transition-all`}
 			>
 				<ul
-					className={`nav scroll-smooth lg:flex lg:flex-row justify-around items-center lg:h-full h-screen  ${
+					className={`nav w-full scroll-smooth lg:flex lg:flex-row justify-around items-center lg:h-full h-screen  ${
 						active ? "flex flex-col" : "hidden"
 					} `}
 				>

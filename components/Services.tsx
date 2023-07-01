@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 import image2 from "@/public/image2.png";
 function Services() {
-  return (
+	return (
 		<div id="Сервисы" className="why w-full">
 			<div className="title text-center font-medium text-5xl mb-16">
 				Почему вам стоит остановиться здесь
@@ -42,10 +42,15 @@ function Services() {
 						</div>
 					</div>
 				</div>
-				<Image src={image2} alt="hotel" className="hidden lg:block" />
+				<Image
+					placeholder="blur"
+					src={image2}
+					alt="hotel"
+					className="hidden lg:block"
+				/>
 			</div>
 		</div>
 	);
 }
 
-export default Services
+export default Services;

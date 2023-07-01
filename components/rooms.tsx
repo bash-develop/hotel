@@ -22,6 +22,7 @@ function Rooms() {
 			<div className="items grid gap-20 px-3 max-[450px]:grid-cols-1 grid-cols-2 lg:grid-cols-3 ">
 				<div className="flex flex-col gap-3">
 					<Image
+						placeholder="blur"
 						src={standard2}
 						alt="фото комнаты"
 						className="lg:w-80 w-full"
@@ -32,35 +33,60 @@ function Rooms() {
 					</div>
 				</div>
 				<div className="flex flex-col gap-3">
-					<Image src={stand5} alt="фото комнаты" className="lg:w-80 w-full" />
+					<Image
+						placeholder="blur"
+						src={stand5}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
 					<div className="ghests text-sm text-gray-400 text-left">5 ГОСТЕЙ</div>
 					<div className="title text-xl font-semibold text-left">
 						Пятиместный Standard
 					</div>
 				</div>
 				<div className="flex flex-col gap-3">
-					<Image src={luxRoom} alt="фото комнаты" className="lg:w-80 w-full" />
+					<Image
+						placeholder="blur"
+						src={luxRoom}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
 					<div className="ghests text-sm text-gray-400 text-left">2 ГОСТЯ</div>
 					<div className="title text-xl font-semibold text-left">
 						Люкс Classic
 					</div>
 				</div>
 				<div className="flex flex-col gap-3 ">
-					<Image src={stand6} alt="фото комнаты" className="lg:w-80 w-full" />
+					<Image
+						placeholder="blur"
+						src={stand6}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
 					<div className="ghests text-sm text-gray-400 text-left">6 ГОСТЕЙ</div>
 					<div className="title text-xl font-semibold text-left">
 						Шестиместный Standard
 					</div>
 				</div>
 				<div className="flex flex-col gap-3">
-					<Image src={super3} alt="фото комнаты" className="lg:w-80 w-full" />
+					<Image
+						placeholder="blur"
+						src={super3}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
 					<div className="ghests text-sm text-gray-400 text-left">3 ГОСТЯ</div>
 					<div className="title text-xl font-semibold text-left">
 						Трёхместный Superior
 					</div>
 				</div>
 				<div className="flex flex-col gap-3">
-					<Image src={stand4} alt="фото комнаты" className="lg:w-80 w-full" />
+					<Image
+						placeholder="blur"
+						src={stand4}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
 					<div className="ghests text-sm text-gray-400 text-left">4 ГОСТЯ</div>
 					<div className="title text-xl font-semibold text-left">
 						Четырёхместный Standard

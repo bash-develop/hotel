@@ -10,22 +10,22 @@ import leaf from "@/public/leaf.svg";
 
 const items = [
 	{
-		image: <Image src={tea} alt="alt"/>,
+		image: <Image  src={tea} alt="alt" />,
 		title: "Кухня",
 		desc: "Amet minim mollit non deserunt ullamco est",
 	},
 	{
-		image: <Image src={car} alt="alt"  className="p-1"/>,
+		image: <Image  src={car} alt="alt" className="p-1" />,
 		title: "Аренда авто и паркинг",
 		desc: "Amet minim mollit non deserunt ullamco est",
 	},
 	{
-		image: <Image src={leaf} alt="alt"  />,
+		image: <Image  src={leaf} alt="alt" />,
 		title: "Лучшие комнаты",
 		desc: "Amet minim mollit non deserunt ullamco est",
 	},
 	{
-		image: <Image src={coffe} alt="alt"/>,
+		image: <Image src={coffe} alt="alt" />,
 		title: "Бесплатный чай/кофе",
 		desc: "Amet minim mollit non deserunt ullamco est",
 	},
@@ -54,6 +54,7 @@ function About() {
 					</div>
 				</div>
 				<Image
+					placeholder="blur"
 					src={aboutImg}
 					alt="about"
 					className=" xl:h-[600px] md:h-[400px] px-2"
@@ -67,11 +68,17 @@ function About() {
 					<div className="reviews text-base text-gray-400 mb-10">
 						<div className="flex gap-2">
 							<span className="font-bold text-xl text-black">8.5</span>
-							<Image src={star} alt="Звезд" />
+							<Image  src={star} alt="Звезд" />
 						</div>
 						Отличные отзывы
 					</div>
-					<Image src={reviewers} alt="reviewers" height={30} className="mb-5" />
+					<Image
+						placeholder="blur"
+						src={reviewers}
+						alt="reviewers"
+						height={30}
+						className="mb-5"
+					/>
 					Людям тут нравится
 				</div>
 				<div className="right grid  grid-cols-2 gap-2 md:gap-8 mb-10">
@@ -83,7 +90,9 @@ function About() {
 							<div className="image flex items-center justify-center p-3 rounded-full bg-orange-400 w-16 h-16 ">
 								{el.image}
 							</div>
-							<div className="title text-lg text-black font-semibold">{el.title}</div>
+							<div className="title text-lg text-black font-semibold">
+								{el.title}
+							</div>
 							<div className="description">{el.desc}</div>
 						</div>
 					))}
