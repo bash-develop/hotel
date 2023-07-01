@@ -9,7 +9,7 @@ function Services() {
 			</div>
 			<div className="flex items-center justify-evenly flex-wrap ">
 				<div className="flex flex-col gap-10 max-w-[380px]">
-					<div className="flex flex-col gap-2 ">
+					<div className="flex flex-col gap-2 pl-1">
 						<div className="number text-white p-3 text-lg rounded-full bg-orange-600 w-10 h-10 flex items-center justify-center">
 							1
 						</div>
@@ -19,7 +19,7 @@ function Services() {
 							кроватями для детей
 						</div>
 					</div>
-					<div className="flex flex-col gap-2 ">
+					<div className="flex flex-col gap-2 pl-1">
 						<div className="number text-white p-3 text-lg rounded-full bg-orange-600 w-10 h-10 flex items-center justify-center">
 							2
 						</div>
@@ -31,7 +31,7 @@ function Services() {
 							комниционером, а так же собственной душевой комнатой
 						</div>
 					</div>
-					<div className="flex flex-col gap-2 ">
+					<div className="flex flex-col gap-2 pl-1">
 						<div className="number text-white p-3 text-lg rounded-full bg-orange-600 w-10 h-10 flex items-center justify-center">
 							3
 						</div>
