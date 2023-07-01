@@ -10,24 +10,24 @@ import leaf from "@/public/leaf.svg";
 
 const items = [
 	{
-		image: <Image  src={tea} alt="alt" />,
+		image: <Image src={tea} alt="alt" />,
 		title: "Кухня",
-		desc: "Amet minim mollit non deserunt ullamco est",
+		desc: "Вкусный завтрак, доставка тоже вкусная",
 	},
 	{
-		image: <Image  src={car} alt="alt" className="p-1" />,
+		image: <Image src={car} alt="alt" className="p-1" />,
 		title: "Аренда авто и паркинг",
-		desc: "Amet minim mollit non deserunt ullamco est",
+		desc: "Отель предоставляет трансфер до отеля, аренду авто, а так же отлтчный паркинг",
 	},
 	{
-		image: <Image  src={leaf} alt="alt" />,
+		image: <Image src={leaf} alt="alt" />,
 		title: "Лучшие комнаты",
-		desc: "Amet minim mollit non deserunt ullamco est",
+		desc: "Очень красивые комнаты с кондиционером. Удобная душевая . Очень чисто и уютно.",
 	},
 	{
 		image: <Image src={coffe} alt="alt" />,
 		title: "Бесплатный чай/кофе",
-		desc: "Amet minim mollit non deserunt ullamco est",
+		desc: "Бесплатный чай и кофе в номере - просто замечательно!",
 	},
 ];
 function About() {
