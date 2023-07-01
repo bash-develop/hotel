@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +17,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body className={` w-11/12  overflow-x-hidden ${inter.className} flex justify-center items-center mx-auto`}>
+		<html lang="en" className="scroll-smooth">
+			<body
+				className={` scroll-smooth  overflow-x-hidden ${inter.className} flex flex-col justify-center items-center`}
+			>
 				<Header />
-
-				<div className="">{children}</div>
+				<div className="scroll-smooth">{children}</div>
+				<Footer/>
 			</body>
 		</html>
 	);

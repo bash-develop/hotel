@@ -19,18 +19,21 @@ function Header() {
 	return (
 		<>
 			<div
-				className={`lg:w-11/12 w-full flex items-center justify-center  fixed top-0 z-50 lg:h-24 text-white ${
+				className={` w-full flex items-center justify-center  fixed top-0 z-50 text-white ${
 					scrolled
-						? "border-b border-dark6 bg-black/50 backdrop-blur-xl lg:h-16"
-						: "bg-black/90"
+						? "border-b border-dark6 bg-black/80 backdrop-blur-xl lg:h-16"
+						: "bg-black/90 lg:h-24"
 				} z-30 transition-all`}
 			>
 				<ul
-					className={`nav lg:flex container lg:flex-row justify-around items-center lg:h-full h-screen  ${
+					className={`nav scroll-smooth lg:flex lg:flex-row justify-around items-center lg:h-full h-screen  ${
 						active ? "flex flex-col" : "hidden"
 					} `}
 				>
-					<li className="z-50 flex items-center justify-center text-lg w-full lg:w-64 text-center  h-14">
+					<li
+						className="z-50 select-none flex items-center justify-center text-lg w-full lg:w-64 text-center  h-14 cursor-pointer"
+						onClick={() => scrollTo(0, 0)}
+					>
 						Отель София
 					</li>
 					{links.map((link, i) => {
@@ -41,26 +44,29 @@ function Header() {
 									setActiveLink(link);
 								}}
 								key={i}
-								className={`flex items-center ${
+								className={`flex scroll-smooth items-center ${
 									activeLink === link ? "border-b border-white/90" : ""
 								}`}
 							>
-								<Link
+								<a
 									className="lg:w-fit transition-all duration-300  hover:bg-white/20 p-2 rounded-lg"
 									href={`#${link}`}
 								>
 									{link}
-								</Link>
+								</a>
 							</li>
 						);
 					})}
-					<li className="book border-2 border-solid border-white px-3 py-2 hover:text-black hover:bg-white transition-all duration-300 cursor-pointer justify-self-end">
+					<li
+						className="book border-2 border-solid border-white px-3 py-2 hover:text-black hover:bg-white transition-all duration-300 cursor-pointer justify-self-end"
+						onClick={() => scrollTo(0, 0)}
+					>
 						Забронировать
 					</li>
 				</ul>
 			</div>
 			<div
-				className="flex lg:hidden absolute top-0 right-1 z-50"
+				className=" lg:hidden fixed top-0 right-1 z-50"
 				onClick={() => setActive(!active)}
 			>
 				{active ? (
