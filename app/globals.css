@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
+body {
 	&::-webkit-scrollbar {
 		@apply w-2;
 	}
@@ -13,4 +13,8 @@
 	&::-webkit-scrollbar-thumb {
 		@apply bg-black/60;
 	}
-} */
+}
+
+div{
+	@apply duration-300 transition-all ;
+}

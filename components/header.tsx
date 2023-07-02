@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import useScroll from "@/app/libs/use-scroll";
@@ -32,7 +31,11 @@ function Header() {
 				>
 					<li
 						className="z-50 select-none flex items-center justify-center text-lg w-full lg:w-64 text-center  h-14 cursor-pointer"
-						onClick={() => scrollTo(0, 0)}
+						onClick={() => {
+							scrollTo(0, 0);
+							setActive(false);
+							setActiveLink("Домой");
+						}}
 					>
 						Отель София
 					</li>
@@ -59,9 +62,23 @@ function Header() {
 					})}
 					<li
 						className="book border-2 border-solid border-white px-3 py-2 hover:text-black hover:bg-white transition-all duration-300 cursor-pointer justify-self-end"
-						onClick={() => scrollTo(0, 0)}
+						onClick={() => {
+							scrollTo(0, 0);
+							setActive(false);
+						}}
 					>
-						Забронировать
+						<a href="tel:+79383449997">Позвонить</a>
+					</li>
+					<li
+						className="book border-2 border-solid border-white px-3 py-2 hover:text-black hover:bg-white transition-all duration-300 cursor-pointer justify-self-end"
+						onClick={() => {
+							setActive(false);
+							setActiveLink("Забронировать");
+						}}
+					>
+						<a className="" href="#Бронь">
+							Забронировать
+						</a>
 					</li>
 				</ul>
 			</div>

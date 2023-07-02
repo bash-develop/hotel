@@ -22,7 +22,7 @@ export default function RootLayout({
 				className={` scroll-smooth  overflow-x-hidden ${inter.className} flex flex-col justify-center items-center`}
 			>
 				<Header />
-				<div className="scroll-smooth">{children}</div>
+				<div className="">{children}</div>
 				<Footer/>
 			</body>
 		</html>
