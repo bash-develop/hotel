@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import standard2 from "@/public/2standard.png";
+import beds2 from "@/public/2beds.png";
+import standard2Plus from "@/public/2stand+.png";
 import super3 from "@/public/3super.png";
 import luxRoom from "@/public/luxRoom.png";
 import stand5 from "@/public/5standard.png";
@@ -23,30 +25,6 @@ function Rooms() {
 				<div className="flex flex-col gap-3">
 					<Image
 						placeholder="blur"
-						src={standard2}
-						alt="фото комнаты"
-						className="lg:w-80 w-full"
-					/>
-					<div className="ghests text-sm text-gray-400 text-left">2 ГОСТЯ</div>
-					<div className="title text-xl font-semibold text-left">
-						Двухместный Standard
-					</div>
-				</div>
-				<div className="flex flex-col gap-3">
-					<Image
-						placeholder="blur"
-						src={stand5}
-						alt="фото комнаты"
-						className="lg:w-80 w-full"
-					/>
-					<div className="ghests text-sm text-gray-400 text-left">5 ГОСТЕЙ</div>
-					<div className="title text-xl font-semibold text-left">
-						Пятиместный Standard
-					</div>
-				</div>
-				<div className="flex flex-col gap-3">
-					<Image
-						placeholder="blur"
 						src={luxRoom}
 						alt="фото комнаты"
 						className="lg:w-80 w-full"
@@ -56,16 +34,41 @@ function Rooms() {
 						Люкс Classic
 					</div>
 				</div>
-				<div className="flex flex-col gap-3 ">
+
+				<div className="flex flex-col gap-3">
 					<Image
 						placeholder="blur"
-						src={stand6}
+						src={standard2}
 						alt="фото комнаты"
 						className="lg:w-80 w-full"
 					/>
-					<div className="ghests text-sm text-gray-400 text-left">6 ГОСТЕЙ</div>
+					<div className="ghests text-sm text-gray-400 text-left">2 ГОСТЯ</div>
 					<div className="title text-xl font-semibold text-left">
-						Шестиместный Standard
+						Двухместный Standard <br />
+					</div>
+				</div>
+				<div className="flex flex-col gap-3">
+					<Image
+						placeholder="blur"
+						src={standard2Plus}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
+					<div className="ghests text-sm text-gray-400 text-left">2 ГОСТЯ</div>
+					<div className="title text-xl font-semibold text-left">
+						Двухместный c двуспальной <br /> кроватью и диваном
+					</div>
+				</div>
+				<div className="flex flex-col gap-3">
+					<Image
+						placeholder="blur"
+						src={beds2}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
+					<div className="ghests text-sm text-gray-400 text-left">2 ГОСТЯ</div>
+					<div className="title text-xl font-semibold text-left">
+						Двухместный c двумя <br /> кроватьями
 					</div>
 				</div>
 				<div className="flex flex-col gap-3">
@@ -90,6 +93,30 @@ function Rooms() {
 					<div className="ghests text-sm text-gray-400 text-left">4 ГОСТЯ</div>
 					<div className="title text-xl font-semibold text-left">
 						Четырёхместный Standard
+					</div>
+				</div>
+				<div className="flex flex-col gap-3">
+					<Image
+						placeholder="blur"
+						src={stand5}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
+					<div className="ghests text-sm text-gray-400 text-left">5 ГОСТЕЙ</div>
+					<div className="title text-xl font-semibold text-left">
+						Пятиместный Standard
+					</div>
+				</div>
+				<div className="flex flex-col gap-3 ">
+					<Image
+						placeholder="blur"
+						src={stand6}
+						alt="фото комнаты"
+						className="lg:w-80 w-full"
+					/>
+					<div className="ghests text-sm text-gray-400 text-left">6 ГОСТЕЙ</div>
+					<div className="title text-xl font-semibold text-left">
+						Шестиместный Standard
 					</div>
 				</div>
 			</div>
