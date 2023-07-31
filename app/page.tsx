@@ -9,14 +9,16 @@ import Contacts from "@/components/Contacts";
 export default function Home() {
 	return (
 		<main className="scroll-smooth flex min-h-screen flex-col items-center justify-start lg:pt-24 overflow-x-hidden">
-			<Image
-				placeholder="blur"
-				src={hero}
-				alt="Отель София"
-				id="Домой"
-				className="w-screen"
-			/>
-			<Booking />
+			<div className="relative">
+				<Image
+					placeholder="blur"
+					src={hero}
+					alt="Отель София"
+					id="Домой"
+					className="w-screen"
+				/>
+				<Booking />
+			</div>
 			<Services />
 			<Rooms />
 			<About />

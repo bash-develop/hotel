@@ -2,11 +2,10 @@ import React from "react";
 
 function Booking() {
 	return (
-		<div
-			className="book h-48  bg-orange-400/30 w-full flex text-xl font-bold text-white items-center justify-center text-center "
-			id="Бронь"
-		>
-			Скоро тут будет доступна бронь
+		<div id='block-search' className="bg-orange-50 bg-opacity-90 w-full max-w-screen-xl sm:absolute sm:bottom-0 lg:bottom-20 m-auto sm:left-0 sm:right-0">
+			<div id='tl-search-form' className='px-7'>
+				<noindex><a href='https://www.travelline.ru/products/tl-hotel/' rel='nofollow' target='_blank'>TravelLine</a></noindex>
+			</div>
 		</div>
 	);
 }

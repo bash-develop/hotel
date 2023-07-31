@@ -76,7 +76,7 @@ function Header() {
 							setActiveLink("Забронировать");
 						}}
 					>
-						<a className="" href="#Бронь">
+						<a className="" href="#" data-tl-booking-open="true">
 							Забронировать
 						</a>
 					</li>
