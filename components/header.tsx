@@ -87,9 +87,9 @@ function Header() {
 				onClick={() => setActive(!active)}
 			>
 				{active ? (
-					<HiOutlineX className="w-8 h-8 text-white" />
+					<HiOutlineX className="w-10 h-10 text-white  cursor-pointer hover:scale-125 duration-200" />
 				) : (
-					<HiMenu className="w-8 h-8 text-black " />
+					<HiMenu className="w-10 h-10 text-orange-400 cursor-pointer hover:scale-125 duration-200 " />
 				)}
 			</div>
 		</>

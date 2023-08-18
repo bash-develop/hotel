@@ -1,10 +1,11 @@
 import Header from "@/components/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import Footer from "@/components/footer";
 import Script from "next/script";
+// import Lenis from "@studio-freight/lenis";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ subsets: ["latin", 'cyrillic'], weight:['300', '400', '500'] });
 
 export const metadata = {
 	title: "Отель София, Ставрополь, Минеральные воды - официальный сайт",
@@ -59,7 +60,7 @@ export default function RootLayout({
         })(window);`}
 		</Script>
 			<body
-				className={` scroll-smooth  overflow-x-hidden ${inter.className} flex flex-col justify-center items-center`}
+				className={` scroll-smooth  overflow-x-hidden ${roboto.className} flex flex-col justify-center items-center`}
 			>
 				<Header />
 				<div className="">{children}</div>

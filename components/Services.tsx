@@ -7,7 +7,7 @@ import laundry from "@/public/laundry.svg";
 import car from "@/public/car.svg";
 function Services() {
 	return (
-		<div id="Сервисы" className="why w-full">
+		<div id="Сервисы" className="why w-full ">
 			<div className="px-2 md:px-0 flex my-10  flex-wrap justify-center gap-2 lg:justify-around items-center w-full">
 				<div className="item">
 					<div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">

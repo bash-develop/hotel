@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 function Footer() {
 	return (
 		<div className="border-t-1 bg-black/90 py-4 w-full text-white text-center flex flex-col sm:flex-row items-center justify-between lg:px-5 px-2">
-			<div>
+			<div className="sm:text-left text-center">
 				<span className="block"> Отель София</span>
 				<span className="block">2023, Официальный сайт</span>
 			</div>

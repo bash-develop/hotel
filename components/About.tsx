@@ -81,7 +81,7 @@ function About() {
 					/>
 					Людям тут нравится
 				</div>
-				<div className="right grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mb-10">
+				<div className="right grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mb-10 px-4">
 					{items.map((el, i) => (
 						<div
 							className="item flex flex-col gap-2 xl:w-[300px] shadow-lg hover:shadow-2xl transition-all duration-300 p-1"
