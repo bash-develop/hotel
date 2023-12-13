@@ -61,7 +61,7 @@ function Services() {
 						</div>
 						<div className="subtitle text-base text-gray-600">
 							Цены от 3100 рублей. Каждый номер оборудован телевизором,
-							комниционером, а так же собственной душевой комнатой
+							кондиционером, а так же собственной душевой комнатой
 						</div>
 					</div>
 					<div className="flex flex-col gap-2 pl-1">
@@ -71,7 +71,7 @@ function Services() {
 						<div className="title font-bold text-2xl">Кухня</div>
 						<div className="subtitle text-base text-gray-600">
 							На територии отеля оборудована кухня, так что вы всегда сможете
-							приготовить или заказать еду.
+							заказать вкусный завтрак в номер.
 						</div>
 					</div>
 				</div>
