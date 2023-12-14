@@ -64,6 +64,7 @@ export default function Home() {
       root
       ref={lenisRef}
       options={{
+        lerp: 0.4,
         smoothTouch: true,
         SmoothScroll: true,
         duration: 1.5,
