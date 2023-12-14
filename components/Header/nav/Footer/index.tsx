@@ -13,7 +13,8 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Отель София</span> {new Date().getFullYear()}, Официальный сайт
+          <span>Отель София :</span> {new Date().getFullYear()}, Официальный
+          сайт
         </motion.li>
       </ul>
       <ul>
@@ -35,7 +36,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Создано:</span>Shankin Dev
+          <span>Телефон:</span>+7(938)-344-99-97
         </motion.li>
       </ul>
     </div>

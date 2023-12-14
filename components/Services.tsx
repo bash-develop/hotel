@@ -72,20 +72,20 @@ function Services() {
 
   return (
     <div id="servise" ref={container} className="why w-full ">
-      <div className="px-2 md:px-0 flex my-10 flex-wrap justify-center gap-2 lg:justify-around items-center w-full basis-1 flex-1">
-        <div className="item">
+      <div className="px-2 md:px-0 flex my-10 flex-wrap justify-center gap-5 lg:justify-around items-center w-full basis-1 flex-1">
+        <div className="item w-4/5  md:w-[20%]">
           <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
             <Image src={coffe} alt="лого" width={48} />
             <div className="about">Бесплатные напитки</div>
           </div>
         </div>
-        <div className="item">
+        <div className="item w-4/5 md:w-[20%]">
           <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
             <Image src={car} alt="лого" width={48} />
             <div className="about">Прокат авто и парковка</div>
           </div>
         </div>
-        <div className="item">
+        <div className="item w-4/5  md:w-[20%]">
           <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
             <svg
               width="49"
@@ -108,7 +108,7 @@ function Services() {
             <div className="about">Прачечная</div>
           </div>
         </div>
-        <div className="item">
+        <div className="item w-4/5 md:w-[20%]">
           <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
             <Image src={wifi} alt="лого" width={48} />
             <div className="about">Бесплатный Wi-Fi</div>
@@ -125,7 +125,7 @@ function Services() {
               1
             </div>
             <div className="title font-bold text-2xl">Большой выбор комнат</div>
-            <div className="line1 bg-orange-600 w-full h-1"></div>
+            <div className="line1 bg-orange-600 w-[95%]  rounded-md h-1"></div>
             <div className="subtitle text-base text-gray-600">
               Комнаты различной вменстимости с разными типами кроватей, а так же
               кроватями для детей
@@ -138,7 +138,7 @@ function Services() {
             <div className="title font-bold text-2xl">
               Низкая цена при отличном качестве
             </div>
-            <div className="line2 bg-orange-600 w-full h-1"></div>
+            <div className="line2 bg-orange-600 w-[95%] rounded-md h-1"></div>
             <div className="subtitle text-base text-gray-600">
               Цены от 3100 рублей. Каждый номер оборудован телевизором,
               кондиционером, а так же собственной душевой комнатой
@@ -149,7 +149,7 @@ function Services() {
               3
             </div>
             <div className="title font-bold text-2xl">Кухня</div>
-            <div className="line3 bg-orange-600 w-full h-1"></div>
+            <div className="line3 bg-orange-600 w-[95%] rounded-md h-1"></div>
             <div className="subtitle text-base text-gray-600">
               На територии отеля оборудована кухня, так что вы всегда сможете
               заказать вкусный завтрак в номер.
