@@ -1,27 +1,36 @@
-import Header from "@/components/header";
-import "./globals.css";
+import Header from "@/components/Header/header";
+import "./globals.scss";
 import { Roboto } from "next/font/google";
 import Footer from "@/components/footer";
 import Script from "next/script";
-// import Lenis from "@studio-freight/lenis";
+import { RealViewport } from "@/components/RealViewport";
 
-const roboto = Roboto({ subsets: ["latin", 'cyrillic'], weight:['300', '400', '500'] });
+const roboto = Roboto({
+  subsets: ["latin", "cyrillic"],
+  weight: ["300", "400", "500"],
+});
 
 export const metadata = {
-	title: "Отель София, Ставрополь, Минеральные воды - официальный сайт",
-	description:
-		" Отель София - идеальный выбор для комфортного пребывания в Минеральных Водах. Мы предлагаем бесплатный Wi-Fi, трансфер, парковку и удобства для детей. Насладитесь удобством кондиционера и близостью к основным достопримечательностям города. Забронируйте номер сейчас и насладитесь приятным отдыхом в Отеле София.",
+  title: "Отель София, Ставрополь, Минеральные воды - официальный сайт",
+  description:
+    " Отель София - идеальный выбор для комфортного пребывания в Минеральных Водах. Мы предлагаем бесплатный Wi-Fi, трансфер, парковку и удобства для детей. Насладитесь удобством кондиционера и близостью к основным достопримечательностям города. Забронируйте номер сейчас и насладитесь приятным отдыхом в Отеле София.",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang="en" className="scroll-smooth">
-		<Script id="show-banner">
-			{`(function (w) {
+  return (
+    <html lang="ru" className="lenis">
+      <body className={roboto.className}>
+        <RealViewport />
+        <Header />
+        {children}
+        <Footer />
+      </body>
+      <Script id="show-banner">
+        {`(function (w) {
             var q = [
                 ['setContext', 'TL-INT-otelsofia-ru_2023-07-31', 'ru'],
                 ['embed', 'search-form', {
@@ -58,14 +67,7 @@ export default function RootLayout({
                 })(h);
             }
         })(window);`}
-		</Script>
-			<body
-				className={` scroll-smooth  overflow-x-hidden ${roboto.className} flex flex-col justify-center items-center`}
-			>
-				<Header />
-				<div className="">{children}</div>
-				<Footer/>
-			</body>
-		</html>
-	);
+      </Script>
+    </html>
+  );
 }

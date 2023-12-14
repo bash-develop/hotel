@@ -5,15 +5,15 @@ function Contacts() {
 	return (
 		<div
 			className="contats w-full md:w-11/12 py-8 md:py-20 flex flex-col items-center justify-center"
-			id="Контакты"
+			id="contacts"
 		>
 			<div className="title text-center font-medium text-5xl mb-16 w-full">
 				Контакты
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-20 content-around px-8">
 				<div className="info flex flex-col gap-2">
-					<div className="phone flex gap-2 items-center text-xl hover:text-orange-400">
-						<FaPhone />
+					<div className="phone flex gap-2 items-start text-xl hover:text-orange-400">
+						<FaPhone  className=" translate-y-1"/>
 						<a href="tel:+79383449997" className=" ">
 							+7(938)-344-99-97 <br />
 							<span className="text-base">
