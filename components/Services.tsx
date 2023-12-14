@@ -21,12 +21,12 @@ function Services() {
         scrollTrigger: {
           scrub: 1,
           trigger: ".item",
-          start: "bottom bottom",
+          start: "bottom 100%",
           endTrigger: ".item",
           end: "+=200",
         },
       });
-      tl.current.addLabel("toTop").from(".item", { y: "-100" });
+      tl.current.addLabel("toTop").from(".item", { y: "-150", opacity: 0 });
       gsap
         .timeline({
           smoothChildTiming: true,

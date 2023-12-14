@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import aboutImg from "@/public/about.png";
 import star from "@/public/star.svg";
@@ -7,6 +7,9 @@ import coffe from "@/public/Coffe_To_Go.svg";
 import tea from "@/public/tea.svg";
 import car from "@/public/car_white.svg";
 import leaf from "@/public/leaf.svg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const items = [
   {
@@ -31,6 +34,26 @@ const items = [
   },
 ];
 function About() {
+  gsap.registerPlugin(ScrollTrigger);
+  const container = useRef<HTMLDivElement>(null);
+  const tl = useRef<GSAPTimeline>();
+  useGSAP(
+    () => {
+      tl.current = gsap.timeline({
+        smoothChildTiming: true,
+        paused: true,
+        scrollTrigger: {
+          scrub: 1,
+          trigger: container.current,
+          start: "center center+=200px",
+          end: "+=50",
+        },
+      });
+      tl.current.addLabel("toTop").from(".right", { x: "500", opacity: 0 });
+    },
+    { scope: container }
+  );
+
   return (
     <>
       <div
@@ -60,8 +83,8 @@ function About() {
           className=" xl:h-[600px] md:h-[400px] px-2"
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-10">
-        <div className="left pl-2">
+      <div ref={container} className="grid grid-cols-1 md:grid-cols-2 mt-10">
+        <div className="left pl-2 mb-5">
           <div className="title font-bold text-2xl mb-2">
             КЛАССИЧЕСКИЕ НОМЕРА И ИНТЕРЬЕР
           </div>
@@ -84,7 +107,8 @@ function About() {
         <div className="right grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mb-10 px-4">
           {items.map((el, i) => (
             <div
-              className="item flex flex-col gap-2 xl:w-[300px] shadow-lg hover:shadow-2xl transition-all duration-300 p-1"
+              id={`item${i}`}
+              className="item flex flex-col gap-2 border xl:w-[300px] shadow-lg hover:shadow-2xl border-white hover:border-orange-400 border-solid transition-all duration-300 p-3"
               key={i}
             >
               <div className="image flex items-center justify-center p-3 rounded-full bg-orange-400 w-16 h-16 ">
