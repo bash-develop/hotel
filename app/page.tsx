@@ -64,25 +64,24 @@ export default function Home() {
       root
       ref={lenisRef}
       options={{
-        lerp: 0.4,
+        duration: 1.2,
         smoothTouch: true,
         SmoothScroll: true,
-        duration: 1.5,
+        touchMultiplier: 2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        autoRaf: false,
       }}
     >
       <AnimatePresence mode="wait">
         {!introOut && <Preloader />}
       </AnimatePresence>
-      <main className="scrollBody main pt-[38px] md:pt-16">
-        <div className="relative " id="home">
+      <main className="scrollBody main pt-[38px] md:pt-16" id="home">
+        <div className="relative ">
           <Image
             placeholder="blur"
             src={hero}
             alt="Отель София"
             id="Домой"
-            className="w-screen"
+            className="w-[120vw] sm:w-screen"
           />
           <Booking />
         </div>
