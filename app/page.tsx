@@ -75,7 +75,7 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {!introOut && <Preloader />}
       </AnimatePresence>
-      <main className="scrollBody main md:pt-[38px] pt-16">
+      <main className="scrollBody main pt-[38px] md:pt-16">
         <div className="relative " id="home">
           <Image
             placeholder="blur"
