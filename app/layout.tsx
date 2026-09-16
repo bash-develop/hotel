@@ -1,6 +1,7 @@
 import Header from "@/components/Header/header";
+// @ts-ignore: Next.js processes global SCSS imports at build time.
 import "./globals.scss";
-import { Roboto } from "next/font/google";
+import { Roboto, Golos_Text, Playfair_Display } from "next/font/google";
 import Footer from "@/components/footer";
 import Script from "next/script";
 import { RealViewport } from "@/components/RealViewport";
@@ -8,6 +9,19 @@ import { RealViewport } from "@/components/RealViewport";
 const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500"],
+});
+
+const golos = Golos_Text({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-golos",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["italic"],
+  variable: "--font-playfair",
 });
 
 export const metadata = {
@@ -23,7 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className="lenis">
-      <body className={roboto.className}>
+      <body
+        className={`${roboto.className} ${golos.variable} ${playfair.variable}`}
+      >
         <RealViewport />
         <Header />
         {children}

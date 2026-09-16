@@ -1,18 +1,78 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import image2 from "@/public/image2.png";
-import wifi from "@/public/wifi.svg";
-import coffe from "@/public/coffe.svg";
-import laundry from "@/public/laundry.svg";
-import car from "@/public/car.svg";
-import { motion } from "framer-motion";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import {
+  Coffee,
+  Car,
+  Washer,
+  Wifi,
+  Bed,
+  Tag,
+  ChefHat,
+  Shield,
+  ArrowRight,
+  Pin,
+  Diamond,
+} from "@/components/icons";
+
+const perks = [
+  {
+    icon: Coffee,
+    title: "Бесплатные напитки",
+    subtitle: "Чай, кофе, вода 24/7",
+  },
+  {
+    icon: Car,
+    title: "Прокат авто и парковка",
+    subtitle: "Удобство в каждой детали",
+  },
+  {
+    icon: Washer,
+    title: "Прачечная",
+    subtitle: "Чистота без забот",
+  },
+  {
+    icon: Wifi,
+    title: "Бесплатный Wi-Fi",
+    subtitle: "Весь отель покрыт",
+  },
+];
+
+const features = [
+  {
+    num: "01",
+    icon: Bed,
+    title: "Большой выбор комнат",
+    desc: "Комнаты различной вместимости с разными типами кроватей, а также кроватями для детей.",
+  },
+  {
+    num: "02",
+    icon: Tag,
+    title: "Низкая цена при отличном качестве",
+    desc: "Цены от 3100 рублей. Каждый номер оборудован телевизором, кондиционером, а также собственной душевой комнатой.",
+  },
+  {
+    num: "03",
+    icon: ChefHat,
+    title: "Кухня",
+    desc: "На территории отеля оборудована кухня, так что вы всегда сможете заказать вкусный завтрак в номер.",
+  },
+  {
+    num: "04",
+    icon: Shield,
+    title: "Забота о вашем комфорте",
+    desc: "Вежливый персонал, чистота, безопасность и внимание к каждой мелочи.",
+  },
+];
+
 function Services() {
   gsap.registerPlugin(ScrollTrigger);
   const container = useRef<HTMLDivElement>(null);
   const tl = useRef<GSAPTimeline>();
+
   useGSAP(
     () => {
       tl.current = gsap.timeline({
@@ -20,148 +80,160 @@ function Services() {
         paused: true,
         scrollTrigger: {
           scrub: 1,
-          trigger: ".item",
+          trigger: ".perk-item",
           start: "bottom 100%",
-          endTrigger: ".item",
           end: "+=200",
         },
       });
-      tl.current.addLabel("toTop").from(".item", { y: "-150", opacity: 0 });
-      gsap
-        .timeline({
-          smoothChildTiming: true,
-          paused: true,
+      tl.current.addLabel("toTop").from(".perk-item", {
+        y: "-60",
+        opacity: 0,
+        stagger: 0.15,
+      });
+
+      gsap.utils.toArray<HTMLElement>(".feature-line").forEach((line) => {
+        gsap.from(line, {
+          width: 0,
           scrollTrigger: {
             scrub: 1,
-            trigger: ".line1",
+            trigger: line,
             start: "center center+=200px",
             end: "+=200",
           },
-        })
-        .addLabel("line")
-        .from(".line1", { width: 0 });
-      gsap
-        .timeline({
-          smoothChildTiming: true,
-          paused: true,
-          scrollTrigger: {
-            scrub: 1,
-            trigger: ".line2",
-            start: "center center+=200px",
-            end: "+=200",
-          },
-        })
-        .addLabel("line")
-        .from(".line2", { width: 0 });
-      gsap
-        .timeline({
-          smoothChildTiming: true,
-          paused: true,
-          scrollTrigger: {
-            scrub: 1,
-            trigger: ".line3",
-            start: "center center+=200px",
-            end: "+=200",
-          },
-        })
-        .addLabel("line")
-        .from(".line3", { width: 0 });
+        });
+      });
     },
     { scope: container }
   );
 
   return (
-    <div id="servise" ref={container} className="why w-full ">
-      <div className="px-2 md:px-0 flex my-10 flex-wrap justify-center gap-5 lg:justify-around items-center w-full basis-1 flex-1">
-        <div className="item w-4/5  md:w-[20%]">
-          <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
-            <Image src={coffe} alt="лого" width={48} />
-            <div className="about">Бесплатные напитки</div>
-          </div>
-        </div>
-        <div className="item w-4/5 md:w-[20%]">
-          <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
-            <Image src={car} alt="лого" width={48} />
-            <div className="about">Прокат авто и парковка</div>
-          </div>
-        </div>
-        <div className="item w-4/5  md:w-[20%]">
-          <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
-            <svg
-              width="49"
-              height="49"
-              viewBox="0 0 49 49"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                id="path1"
-                d="M14.436 30.4659H35.7871M14.0917 26.4482H36.1315M36.8657 17.884L35.2581 36.6398C35.0803 38.7142 34.9913 39.7512 34.5303 40.5361C34.1243 41.2272 33.5216 41.7811 32.7983 42.1266C31.977 42.5189 30.936 42.519 28.8539 42.519H21.3708C19.2888 42.519 18.2471 42.5189 17.4257 42.1266C16.7024 41.7811 16.0994 41.2272 15.6934 40.536C15.2324 39.7512 15.1435 38.7142 14.9656 36.6398L13.358 17.884C13.2542 16.6733 13.2024 16.0678 13.4062 15.6007C13.5852 15.1903 13.8962 14.8516 14.2898 14.6381C14.7378 14.3952 15.3455 14.3952 16.5606 14.3952H33.6638C34.8789 14.3952 35.4868 14.3952 35.9348 14.6381C36.3284 14.8516 36.6386 15.1903 36.8177 15.6007C37.0214 16.0678 36.9695 16.6733 36.8657 17.884ZM35.6528 14.3952H14.5713C12.7602 14.3952 11.8546 14.3952 11.3286 14.0161C10.8648 13.6819 10.5656 13.1659 10.5055 12.5974C10.4374 11.9526 10.8871 11.1664 11.7857 9.59387C12.457 8.41909 12.7926 7.83169 13.2637 7.40376C13.6848 7.02119 14.1823 6.73239 14.7234 6.55655C15.3286 6.35986 16.005 6.35986 17.358 6.35986H32.8667C34.2198 6.35986 34.8963 6.35986 35.5015 6.55655C36.0427 6.73239 36.5397 7.02119 36.9609 7.40376C37.4319 7.83169 37.7676 8.41909 38.4389 9.59387C39.3375 11.1664 39.787 11.9526 39.7188 12.5974C39.6588 13.1659 39.36 13.6819 38.8962 14.0161C38.3701 14.3952 37.4639 14.3952 35.6528 14.3952Z"
-                stroke="#FF7500"
-                strokeWidth="2"
-                stroke-Linecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+    <div
+      id="servise"
+      ref={container}
+      className="why relative w-full overflow-hidden bg-[#f5f0e8] py-14 lg:py-20"
+    >
+      <div className="pointer-events-none absolute -right-32 -top-40 h-[420px] w-[420px] rounded-full border border-[#ddcfb6]/70" />
+      <div className="pointer-events-none absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full border border-[#ddcfb6]/50" />
 
-            {/* <Image src={laundry} alt="лого" width={48} /> */}
-            <div className="about">Прачечная</div>
+      <div className="relative mx-auto w-full max-w-[1240px] px-4">
+        <div className="flex flex-col divide-y divide-[#e7dcc8] rounded-[28px] border border-[#eee3d0] bg-white/70 px-4 py-2 shadow-[0_18px_50px_rgba(120,95,60,0.08)] backdrop-blur md:flex-row md:items-center md:divide-x md:divide-y-0 md:px-2 md:py-1">
+          {perks.map((perk, i) => {
+            const Icon = perk.icon;
+            return (
+              <div
+                key={i}
+                className="perk-item flex flex-1 items-center gap-4 px-3 py-4 md:px-6"
+              >
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#e5d8c0] bg-[#f4ebda] text-[#9a7742]">
+                  <Icon className="h-7 w-7" />
+                </div>
+                <div>
+                  <div className="text-[15px] font-normal leading-tight text-[#2b251d]">
+                    {perk.title}
+                  </div>
+                  <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-[#b08a4f]">
+                    {perk.subtitle}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 items-center gap-12 lg:mt-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+          <div>
+            <div className="flex items-center gap-4">
+              <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-[#8a7a63]">
+                Преимущества отеля
+              </span>
+              <span className="h-px w-16 bg-[#d8c9ae]" />
+            </div>
+
+            <h2 className="mt-5 font-display text-4xl font-medium leading-[1.1] tracking-tight text-[#26221c] sm:text-5xl lg:text-[52px]">
+              Почему вам стоит
+              <br />
+              <span className="font-normal text-[#b08a4f]">
+                остановиться здесь
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-[520px] text-[15px] leading-relaxed text-[#6b6157]">
+              Мы создали пространство, где каждая деталь работает на ваш
+              комфорт. Уютная атмосфера, продуманный сервис и выгодное
+              расположение — всё, чтобы вы чувствовали себя как дома.
+            </p>
+
+            <div className="mt-9 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+              {features.map((feature, i) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={i} className="flex gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#e5d8c0] bg-[#f4ebda] text-[#9a7742]">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-serif text-lg italic text-[#b08a4f]">
+                          {feature.num}
+                        </span>
+                        <span className="feature-line h-px w-10 bg-[#d8c9ae]" />
+                      </div>
+                      <h3 className="mt-2 text-[17px] font-medium leading-snug text-[#26221c]">
+                        {feature.title}
+                      </h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-[#7a7062]">
+                        {feature.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <a
+                href="#"
+                data-tl-booking-open="true"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#3b2f24] px-7 py-4 text-sm font-medium text-white shadow-lg transition-colors duration-300 hover:bg-[#54402d]"
+              >
+                Забронировать номер
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+              <div className="flex items-center gap-2 text-sm text-[#8a7a63]">
+                <Diamond className="h-3.5 w-3.5 text-[#b08a4f]" />
+                Ваш комфорт — наша главная цель
+              </div>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative h-[420px] w-full overflow-hidden rounded-[28px] sm:h-[520px] lg:h-[580px]">
+              <Image
+                src={image2}
+                alt="Ресепшн отеля София"
+                fill
+                placeholder="blur"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="absolute bottom-5 left-5 right-5 flex items-center gap-3 rounded-2xl bg-white/95 px-5 py-4 shadow-xl sm:left-auto sm:right-5 sm:w-[280px]">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f4ebda] text-[#9a7742]">
+                <Pin className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <div className="text-sm font-medium text-[#26221c]">
+                  Удобное расположение
+                </div>
+                <div className="text-xs text-[#8a7a63]">
+                  в самом сердце города
+                </div>
+              </div>
+              <ArrowRight className="h-4 w-4 shrink-0 text-[#9a7742]" />
+            </div>
           </div>
         </div>
-        <div className="item w-4/5 md:w-[20%]">
-          <div className="logo p-3 rounded-full bg-orange-400/10 flex gap-1 items-center">
-            <Image src={wifi} alt="лого" width={48} />
-            <div className="about">Бесплатный Wi-Fi</div>
-          </div>
-        </div>
-      </div>
-      <div className="title text-center font-medium text-5xl mb-16">
-        Почему вам стоит остановиться здесь
-      </div>
-      <div className="flex items-center justify-evenly flex-wrap ">
-        <div className="flex flex-col gap-10 max-w-[380px]">
-          <div className="flex flex-col gap-2 pl-1">
-            <div className="number text-white p-3 text-lg rounded-full bg-orange-600 w-10 h-10 flex items-center justify-center">
-              1
-            </div>
-            <div className="title font-bold text-2xl">Большой выбор комнат</div>
-            <div className="line1 bg-orange-600 w-[95%]  rounded-md h-1"></div>
-            <div className="subtitle text-base text-gray-600">
-              Комнаты различной вменстимости с разными типами кроватей, а так же
-              кроватями для детей
-            </div>
-          </div>
-          <div className="flex flex-col gap-2 pl-1">
-            <div className="number text-white p-3 text-lg rounded-full bg-orange-600 w-10 h-10 flex items-center justify-center">
-              2
-            </div>
-            <div className="title font-bold text-2xl">
-              Низкая цена при отличном качестве
-            </div>
-            <div className="line2 bg-orange-600 w-[95%] rounded-md h-1"></div>
-            <div className="subtitle text-base text-gray-600">
-              Цены от 3100 рублей. Каждый номер оборудован телевизором,
-              кондиционером, а так же собственной душевой комнатой
-            </div>
-          </div>
-          <div className="flex flex-col gap-2 pl-1">
-            <div className="number text-white p-3 text-lg rounded-full bg-orange-600 w-10 h-10 flex items-center justify-center">
-              3
-            </div>
-            <div className="title font-bold text-2xl">Кухня</div>
-            <div className="line3 bg-orange-600 w-[95%] rounded-md h-1"></div>
-            <div className="subtitle text-base text-gray-600">
-              На територии отеля оборудована кухня, так что вы всегда сможете
-              заказать вкусный завтрак в номер.
-            </div>
-          </div>
-        </div>
-        <Image
-          placeholder="blur"
-          src={image2}
-          alt="hotel"
-          className="hidden lg:block"
-        />
       </div>
     </div>
   );
